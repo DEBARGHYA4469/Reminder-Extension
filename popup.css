@@ -1,0 +1,23 @@
+body{
+    width: 275px;
+    background-color: beige;
+}
+
+@font-face{
+    font-family:'Engagement-Regular';
+    font-style:'normal';
+    font-weight:'300';
+    src:url('Engagement-Regular.ttf') format('truetype');   
+}
+
+#heading{
+    font-family:'Engagement-Regular';
+    font-weight: 600;
+    font-size: 40px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.notes{
+    background-color: antiquewhite;
+}
+
