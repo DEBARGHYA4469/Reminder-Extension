@@ -10,6 +10,19 @@ body{
     src:url('Engagement-Regular.ttf') format('truetype');   
 }
 
+#bt0{
+    position: absolute;
+    display: inline-block;
+    top: 36px;
+}
+#in{
+    display: inline-block;
+    position: relative;
+    width: 160px;
+}
+
+
+
 #heading{
     font-family:'Engagement-Regular';
     font-weight: 600;
@@ -17,7 +30,10 @@ body{
     text-shadow: 4px 4px 4px #aaa;
 }
 
-.notes{
+#notes{
     background-color: antiquewhite;
+}
+#t1{
+    background-color: azure;
 }
 
