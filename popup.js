@@ -1,23 +1,57 @@
 document.addEventListener('DOMContentLoaded',function(){
+    //load the page.
     
-    /*chrome.storage.sync.get({'store':[]},function(foo){
-        $('#fun').text(foo.store);        
-    })*/
+    // storage checking....................................
+    chrome.storage.sync.get('store',function(foo){
+        var reload=foo.store;
+        $('#help').text(reload);
+    });
     
-    array=['happy','birthday','to','you'];
-    array.push('Debarghya');
+    
+    
+    
+    var id_count=0;
+    $('#bt0').click(function(){
+        id_count=id_count+1;
+        var textform=$('#in').val();
+    var array=[];
+    array.push(textform);
     chrome.storage.sync.set({'store':array});
-                            
+      var array;
+        chrome.storage.sync.get('store',function(foo){
+            var bob=foo.store;
+            bob.push('Kundu');
+            
+            chrome.storage.sync.set({'store':bob});
+        });
     
     chrome.storage.sync.get('store',function(foo){
-      var element=foo.store[4];
+      var element=foo.store[id_count];
       var temp=element;
-      var e=document.getElementById("fun");
-        e.insertAdjacentHTML('beforeend',"<h1>"+temp+"</h1>");
+       
+      var e=document.getElementById((id_count-1).toString());
+                var child=document.createElement("h3");
+                child.setAttribute("id",id_count.toString());
+                var tt=document.createTextNode(temp);
+                child.appendChild(tt);
+                 
+                e.appendChild(child);
+                var color=id_count%2;   
+                if(color==0)
+                  { var jj=document.getElementById(id_count.toString());
+                    jj.setAttribute("style","background-color:beige")
+                  }
+                else{
+                    var jj=document.getElementById(id_count.toString());
+                    jj.setAttribute("style","background-color:lightgreen")
+                }
+                
+                       
+        // e.insertAdjacentHTML('beforeend',"<p>"+temp+id_count+"</p>");
         
-    });      
-    
-})
+    });//get the chrome data
+    });//click event handler
+    })//DOM content overload
 
 
 
@@ -30,5 +64,6 @@ document.addEventListener('DOMContentLoaded',function(){
     para.setAttribute("id",'t1')
     var element=document.getElementById('notes');
     element.appendChild(para);
+    
 
 })
