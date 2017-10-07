@@ -15,10 +15,11 @@ body{
     display: inline-block;
     top: 36px;
 }
-#in{
+#text{
     display: inline-block;
     position: relative;
-    width: 160px;
+    width: 120px;
+    top:4.5px;
 }
 
 
@@ -30,9 +31,6 @@ body{
     text-shadow: 4px 4px 4px #aaa;
 }
 
-#notes{
+#0{
     background-color: antiquewhite;
-}
-#t1{
-    background-color: azure;
 }

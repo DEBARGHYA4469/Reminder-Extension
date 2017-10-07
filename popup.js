@@ -1,69 +1,43 @@
-document.addEventListener('DOMContentLoaded',function(){
-    //load the page.
+document.body.onload = function() {
+  chrome.storage.sync.get({"data":[]}, function(items) {
+    if (!chrome.runtime.error) {
+       var len=items.data.length-1;
+        
+       for(var i=0;i<len;i++){
+           var e=document.getElementById("0");
+           var xx=items.data[i];          
+           var child=document.createElement("h2");
+           child.setAttribute("id",(i+1).toString());
+           var tt=document.createTextNode(xx);
+           child.appendChild(tt);
+           e.appendChild(child);
+           var color=i%2;
+           if(color==0){
+               var loc=document.getElementById((i+1).toString());
+               loc.setAttribute("style","background-color:lightgreen");
+           }//color
+           else{
+           var loc=document.getElementById((i+1).toString());
+           loc.setAttribute("style","background-color:beige");
+           }
+       }
     
-    // storage checking....................................
-    chrome.storage.sync.get('store',function(foo){
-        var reload=foo.store;
-        $('#help').text(reload);
+     // document.getElementById("0").innerText = items.data[0];
+    }//runtime error check....
+  });
+}
+
+document.getElementById("set").onclick = function() {
+  var d = document.getElementById("text").value;
+
+    
+    var obj=[];
+    obj.push(d);
+    chrome.storage.sync.get({"data":[]}, function(items) {
+    chrome.storage.sync.set({ "data" : obj.concat(items.data) }, function() { });
     });
     
     
-    
-    
-    var id_count=0;
-    $('#bt0').click(function(){
-        id_count=id_count+1;
-        var textform=$('#in').val();
-    var array=[];
-    array.push(textform);
-    chrome.storage.sync.set({'store':array});
-      var array;
-        chrome.storage.sync.get('store',function(foo){
-            var bob=foo.store;
-            bob.push('Kundu');
-            
-            chrome.storage.sync.set({'store':bob});
-        });
-    
-    chrome.storage.sync.get('store',function(foo){
-      var element=foo.store[id_count];
-      var temp=element;
-       
-      var e=document.getElementById((id_count-1).toString());
-                var child=document.createElement("h3");
-                child.setAttribute("id",id_count.toString());
-                var tt=document.createTextNode(temp);
-                child.appendChild(tt);
-                 
-                e.appendChild(child);
-                var color=id_count%2;   
-                if(color==0)
-                  { var jj=document.getElementById(id_count.toString());
-                    jj.setAttribute("style","background-color:beige")
-                  }
-                else{
-                    var jj=document.getElementById(id_count.toString());
-                    jj.setAttribute("style","background-color:lightgreen")
-                }
-                
-                       
-        // e.insertAdjacentHTML('beforeend',"<p>"+temp+id_count+"</p>");
-        
-    });//get the chrome data
-    });//click event handler
-    })//DOM content overload
-
-
-
-//script injection!!
-document.addEventListener('DOMContentLoaded',function(){
   
-    var para=document.createElement("p");
-    var node=document.createTextNode("This is new");
-    para.appendChild(node);
-    para.setAttribute("id",'t1')
-    var element=document.getElementById('notes');
-    element.appendChild(para);
-    
-
-})
+ window.close();
+}
