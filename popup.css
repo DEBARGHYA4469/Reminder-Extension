@@ -9,7 +9,53 @@ body{
     font-weight:'300';
     src:url('Engagement-Regular.ttf') format('truetype');   
 }
+.even {
+    background-color:aliceblue;
+    border:ridge;
+    font-family: inherit;
+    font-size: 25px;
+    font-family: monospace;
+    text-indent: 11px;   
+    
+}
 
+ #reset {
+    position: absolute;
+    right: 9px;
+    top: 5px;
+    left: 215px;
+    height: 24px;
+    width: 57px;
+    font-size: 12px;
+}
+
+.odd {
+    border: ridge;
+    background-color:lightgreen;
+    font-family: inherit;
+    font-size: 25px;
+    font-family: monospace;
+    text-indent: 11px;
+}
+.alarms {
+    position: relative;
+    height: 2px;
+    width: min-content;
+    right: -190px;
+    top: -34px;
+    color: firebrick;
+    font-size: smaller;
+    font-style: oblique;
+    font-family: sans-serif;
+    font: bold;
+    font-weight: bold;
+}
+
+#time{
+    position: relative;
+    display: inline-block;
+    top: 4.9px;
+}
 #bt0{
     position: absolute;
     display: inline-block;
