@@ -7,14 +7,20 @@ body{
     font-family:'Engagement-Regular';
     font-style:'normal';
     font-weight:'300';
-    src:url('Engagement-Regular.ttf') format('truetype');   
+    src:url('fonts/Engagement-Regular.ttf') format('truetype');   
+}
+@font-face{
+    font-family:'Cormorant-Medium';
+    font-style:'normal';
+    font-weight:'300';
+    src:url('fonts/Cormorant-Medium.ttf') format('truetype');   
 }
 .even {
     background-color:aliceblue;
     border:ridge;
     font-family: inherit;
-    font-size: 25px;
-    font-family: monospace;
+    font-size: 20px;
+    font-family: Cormorant-Medium;
     text-indent: 11px;   
     
 }
@@ -33,8 +39,8 @@ body{
     border: ridge;
     background-color:lightgreen;
     font-family: inherit;
-    font-size: 25px;
-    font-family: monospace;
+    font-size: 20px;
+    font-family: Cormorant-Medium;
     text-indent: 11px;
 }
 .alarms {
@@ -67,6 +73,7 @@ body{
     width: 120px;
     top:4.5px;
 }
+
 
 
 

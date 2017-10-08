@@ -2,9 +2,9 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
    
    var notifOptions={
 	type:"basic",
-	iconUrl:"images/icon48.png",
+	iconUrl:"images/panic.png",
     title:'Pending Works.....',
-    message:"It seems like you need to check your reminders!"
+    message:"It seems like you woke panic monster!"
 };
 
 chrome.notifications.create('notifid',notifOptions);
@@ -12,7 +12,7 @@ chrome.notifications.create('notifid',notifOptions);
     
     var audio=new Audio("alarm.mp3");
     audio.play();
-    for(var delay=0;delay<1000;delay=delay+1);//delay loop
+    for(var delay=0;delay<500;delay=delay+1);//delay loop
     audio.stop();  
     
 });

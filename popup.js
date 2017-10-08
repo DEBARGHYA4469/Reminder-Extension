@@ -12,6 +12,7 @@ document.body.onload = function() {
            child.setAttribute("id",(i+1).toString());
            
            var tt=document.createTextNode(xx.substr(0,xx.length-5));
+        
            var alarm=document.createElement("h2");
            alarm.setAttribute("class","alarms");
            var uu=document.createTextNode(time_yy);
@@ -49,8 +50,7 @@ document.getElementById("set").onclick = function() {
        var interval=(parseInt(t.substr(0,2))-hours)*60 + (parseInt(t.substr(3))-mins);
        if(interval>=0)
        chrome.alarms.create(date.getDate().toString(), {delayInMinutes: interval});
-       else
-           alert("Take rest")
+       
     var obj=[];
     if(d!="" && t!=""){
     obj.push(d.concat(t));
