@@ -17,6 +17,12 @@
     
     "permissions":[
         "storage",
-        "notifications"
-    ]
+        "notifications",
+        "alarms"
+    ],
+    
+    "background":{
+     "scripts": ["eventPage.js"],
+    "persistent": false
+  }
 }

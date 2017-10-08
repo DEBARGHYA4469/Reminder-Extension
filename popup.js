@@ -41,6 +41,16 @@ document.body.onload = function() {
 document.getElementById("set").onclick = function() {
   var d = document.getElementById("text").value;
     var t=document.getElementById("time").value;
+   
+       var date=new Date();
+       var hours=date.getHours();
+       var mins=date.getMinutes();
+    
+       var interval=(parseInt(t.substr(0,2))-hours)*60 + (parseInt(t.substr(3))-mins);
+       if(interval>=0)
+       chrome.alarms.create(date.getDate().toString(), {delayInMinutes: interval});
+       else
+           alert("Take rest")
     var obj=[];
     if(d!="" && t!=""){
     obj.push(d.concat(t));
@@ -54,5 +64,12 @@ document.getElementById("set").onclick = function() {
 document.getElementById("reset").onclick=function(){
     var v="";
     chrome.storage.sync.set({"data":v});
+    chrome.alarms.clearAll();
     window.close();
 }
+
+
+
+
+
+
